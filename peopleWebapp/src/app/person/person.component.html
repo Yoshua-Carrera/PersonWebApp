@@ -1,0 +1,29 @@
+<div class="container">
+  <ng-container *ngIf="!target; else myTemplate">
+    <mat-card class="example-card" *ngFor="let person of people">
+      <mat-card-title
+        >{{ person.id }}. {{ person.firstName }}-{{
+          person.lastName
+        }}</mat-card-title
+      >
+      <mat-card-subtitle>First name: {{ person.firstName }}</mat-card-subtitle>
+      <mat-card-subtitle>First name: {{ person.lastName }}</mat-card-subtitle>
+    </mat-card>
+  </ng-container>
+  <!-- --- -->
+  <ng-template #myTemplate>
+    <mat-card class="example-card" *ngFor="let person of people | personFilter:target">
+      <mat-card-title
+        >{{ person.id }}. {{ person.firstName }}-{{
+          person.lastName
+        }}</mat-card-title
+      >
+      <mat-card-subtitle
+        >First name: {{ person.firstName }}</mat-card-subtitle
+      >
+      <mat-card-subtitle
+        >First name: {{ person.lastName }}</mat-card-subtitle
+      >
+    </mat-card>
+  </ng-template>
+</div>
