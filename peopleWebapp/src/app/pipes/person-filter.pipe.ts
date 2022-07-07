@@ -6,9 +6,6 @@ import { Person } from '../interfaces/person';
 })
 export class PersonFilterPipe implements PipeTransform {
   transform(value: any, target: any): any {
-    //   if (!value || !value) {
-    //     return value;
-    // }
     console.log(value);
     console.log(target);
     console.log();
